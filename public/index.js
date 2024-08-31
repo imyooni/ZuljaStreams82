@@ -70,15 +70,13 @@ const streamers = [
     ['nervousharpist', 'Others', ['Japanese','English']],
     ['oh_be_one','Others',['English','French']],
     ['metal_lizard_jesus','Others',['English']],
-
-    // violin //
-    ['passagallia','Violin',['English']],
-    ['berceuse200','Violin',['Spanish','English']],
-    ['the_friendly_fiddler','Violin',['English']],
-    ['Secretfirefox','Violin',['Portuguese','English']],
-    ['newbaroque','Violin',['English']],
-    ['violinelf','Violin',['English']],
-    ['henriviolin','Violin',['Portuguese','English']],
+    ['passagallia','Others',['English']],
+    ['berceuse200','Others',['Spanish','English']],
+    ['the_friendly_fiddler','Others',['English']],
+    ['Secretfirefox','Others',['Portuguese','English']],
+    ['newbaroque','Others',['English']],
+    ['violinelf','Others',['English']],
+    ['henriviolin','Others',['Portuguese','English']],
 
     // singer //
     ['yejuniverse','Singer',['Korean','English']],
@@ -123,7 +121,7 @@ const statusIcons = [
     'assets/ON.png', 
     'assets/OFF.png'
 ]
-const categories = ['Piano','Violin','Singer','Others']
+const categories = ['Piano','Singer','Others']
 // ================================================================
 // • streamers array (twitch API)
 // ================================================================
