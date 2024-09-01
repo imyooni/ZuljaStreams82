@@ -273,6 +273,13 @@ function updateActiveCategoryButton(activeCategory) {
     }
 }
 
+function truncateText(text, maxLength) {
+    if (text.length > maxLength) {
+        return text.slice(0, maxLength) + '...';
+    }
+    return text;
+}
+
 // ================================================================
 // • streamers list
 // ================================================================
@@ -304,21 +311,23 @@ function showStreamersByCategory(category, page = 1) {
         img.src = profilePic;
         img.alt = `${user}'s profile picture`;
         img.className = 'rounded-img';
+    
         const textContainer = document.createElement('div');
         textContainer.className = 'status-container';
         const nameText = document.createElement('div');
         nameText.className = 'streamer-name';
         nameText.textContent = user;
+    
+        const truncatedCategory = truncateText(`${game}`, 20);
         const statusText = document.createElement('div');
         statusText.className = 'streamer-status';
-        statusText.textContent = isLive ? `Live (${game})` : 'Offline';
+        statusText.textContent = isLive ? `Live (${truncatedCategory})` : 'Offline';
+    
         const statusImg = document.createElement('img');
         statusImg.src = getStatusIcon(isLive);
         statusImg.alt = isLive ? 'Online' : 'Offline';
         statusImg.className = 'status-icon';
-        textContainer.appendChild(nameText);
-        textContainer.appendChild(statusText);
-        textContainer.appendChild(statusImg);
+    
         const langContainer = document.createElement('div');
         langContainer.className = 'lang-container';
         languages.forEach(language => {
@@ -328,6 +337,15 @@ function showStreamersByCategory(category, page = 1) {
             flagImg.className = 'flag-img';
             langContainer.appendChild(flagImg);
         });
+    
+        textContainer.appendChild(nameText);
+        textContainer.appendChild(statusText);
+        textContainer.appendChild(statusImg);
+    
+        li.appendChild(img);
+        li.appendChild(textContainer);
+        li.appendChild(langContainer);
+    
         const socialContainer = document.createElement('div');
         socialContainer.className = 'social-container';
         const twitchBtn = createSocialMediaButton(
@@ -336,17 +354,19 @@ function showStreamersByCategory(category, page = 1) {
             `https://www.twitch.tv/${user}`
         );
         socialContainer.appendChild(twitchBtn);
-        li.appendChild(img);
-        li.appendChild(textContainer);
-        li.appendChild(langContainer);
+    
         li.appendChild(socialContainer);
         container.appendChild(li);
+
+
+
     });
+    
 
     updateActiveCategoryButton(category);
     updatePaginationButtons(); // Update buttons after rendering the list
-
 }
+
 function getStatusIcon(isLive) {
     return isLive ? statusIcons[0] : statusIcons[1];
 }
@@ -362,6 +382,7 @@ function getFlagUrl(language) {
     return flags[0]
    }
 }
+
 function createSocialMediaButton(iconSrc, altText, url) {
     const button = document.createElement('a');
     button.href = url;
@@ -408,6 +429,11 @@ function updateUSTime() {
         minute: '2-digit',
         hour12: false
     };
-    const usTimeString = now.toLocaleTimeString('en-US', options);
+    let usTimeString = now.toLocaleTimeString('en-US', options);
+    // Adjust for the case where hours are '24'
+    if (usTimeString.startsWith('24')) {
+        usTimeString = '00' + usTimeString.slice(2);
+    }
     usTimeElement.textContent = `${usTimeString} HS`;
 }
+
