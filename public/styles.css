@@ -295,6 +295,11 @@ h1 {
     color: 	#F0E68C; 
 }
 
+/* Music status */
+.music .streamer-status {
+    color: 	#F0E68C; 
+}
+
 
 /* Style for the streamer list items */
 #streamers-container ul {
@@ -325,6 +330,12 @@ ul li {
 /* Online/Offline color customization */
 ul li.online {
     background-color: #dc3545; /* Red for online */
+    border: 1px solid #000000; /* Add border with thickness and color */
+}
+
+/* music color customization */
+ul li.music {
+    background-color: #3591dc; /* Red for online */
     border: 1px solid #000000; /* Add border with thickness and color */
 }
 
