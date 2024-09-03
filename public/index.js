@@ -306,7 +306,18 @@ function showStreamersByCategory(category, page = 1) {
 
     paginatedStreamers.forEach(([name, [category, game, profilePic, isLive, user, languages]]) => {
         const li = document.createElement('li');
-        li.classList.add(isLive ? 'online' : 'offline'); // Apply the correct class
+       // li.classList.add(isLive ? 'online' : 'offline'); // Apply the correct class
+        if (isLive) {
+            console.log(game.toLowerCase() === 'music')
+         if (game.toLowerCase() === 'music') {
+          li.classList.add('music');
+         } else {
+          li.classList.add('online');
+         }
+        } else {
+         li.classList.add('offline'); 
+        }
+
         const img = document.createElement('img');
         img.src = profilePic;
         img.alt = `${user}'s profile picture`;
