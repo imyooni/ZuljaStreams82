@@ -53,6 +53,7 @@ const streamers = [
     ['miamakesmusic','Piano',['Korean','English']],
     ['pianistmiri','Piano',['Korean','English']],
     ['ninamare','Piano',['Korean','English']],
+    ['bada_7077','Piano',['Korean','English']],
     ['firefly_piano', 'Piano', ['Korean','English','German']],
     ['zuljanim', 'Piano', ['Korean','English']],
 
