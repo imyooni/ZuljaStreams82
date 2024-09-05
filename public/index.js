@@ -134,7 +134,7 @@ async function getStreamerInfo(streamerName) {
     if (streamerName === 'aori2313') {
         getData()
           async function getData() {
-            const url = "api.chzzk.naver.com/service/v1/channels/81bd5b50f0c0728128442daf7db626fc";
+            const url = "/api.chzzk.naver.com/service/v1/channels/81bd5b50f0c0728128442daf7db626fc";
             try {
               const response = await fetch(url);
               if (!response.ok) {
