@@ -132,23 +132,27 @@ let storedData = []
 
 async function getStreamerInfo(streamerName) {
     if (streamerName === 'aori2313') {
-        getData();
+    async function getChzzkData() {
+  const url = "https://api.chzzk.naver.com/service/v1/channels/81bd5b50f0c0728128442daf7db626fc";
+  
+  try {
+    const response = await fetch(url);
     
-    async function getData() {
-        const url = `/proxy/channels/81bd5b50f0c0728128442daf7db626fc`; // Use the proxy server's endpoint
-
-        try {
-            const response = await fetch(url); // Fetch from the proxy
-            if (!response.ok) {
-                throw new Error(`Response status: ${response.status}`);
-            }
-            const json = await response.json();
-            console.log(json); // Handle the data from Chzzk API
-        } catch (error) {
-            console.error(error.message);
-        }
+    if (!response.ok) {
+      throw new Error(`Error fetching data: ${response.status}`);
     }
 
+    const data = await response.json(); // Parse the JSON from the response
+    console.log(data); // Display the data in the console
+    
+    // Use the data as needed
+    // For example, you can display it in your HTML like this:
+    document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+  } catch (error) {
+    console.error('Error:', error.message);
+  }
+}
+getChzzkData()
     } else {
         try {
             const response = await fetch(`/api/streamer/${streamerName}`);
