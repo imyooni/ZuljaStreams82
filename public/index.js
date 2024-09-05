@@ -132,21 +132,22 @@ let storedData = []
 
 async function getStreamerInfo(streamerName) {
     if (streamerName === 'aori2313') {
-        getData()
-          async function getData() {
-            const url = "/api.chzzk.naver.com/service/v1/channels/81bd5b50f0c0728128442daf7db626fc";
-            try {
-              const response = await fetch(url);
-              if (!response.ok) {
+        getData();
+    
+    async function getData() {
+        const url = `/proxy/channels/81bd5b50f0c0728128442daf7db626fc`; // Use the proxy server's endpoint
+
+        try {
+            const response = await fetch(url); // Fetch from the proxy
+            if (!response.ok) {
                 throw new Error(`Response status: ${response.status}`);
-              }
-          
-              const json = await response.json();
-              console.log(json);
-            } catch (error) {
-              console.error(error.message);
             }
-          }
+            const json = await response.json();
+            console.log(json); // Handle the data from Chzzk API
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
 
     } else {
         try {
