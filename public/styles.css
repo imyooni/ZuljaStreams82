@@ -300,6 +300,11 @@ h1 {
     color: 	#F0E68C; 
 }
 
+/* Music status */
+.chzzk .streamer-status {
+    color: 	#F0E68C; 
+}
+
 
 /* Style for the streamer list items */
 #streamers-container ul {
@@ -336,6 +341,12 @@ ul li.online {
 /* music color customization */
 ul li.music {
     background-color: #3591dc; /* Red for online */
+    border: 1px solid #000000; /* Add border with thickness and color */
+}
+
+/* chzzk color customization */
+ul li.chzzk {
+    background-color: #00FA9A; /* Red for online */
     border: 1px solid #000000; /* Add border with thickness and color */
 }
 
