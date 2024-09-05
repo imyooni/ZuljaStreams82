@@ -3,97 +3,97 @@
 // ================================================================
 const streamers = [
     // piano //
-    ['momostac_piano', 'Piano', ['Japanese','English']],
-    ['mamikopiano', 'Piano', ['Japanese','English']],
-    ['mamita24', 'Piano', ['Japanese','English']],
-    ['hepupiano', 'Piano', ['Japanese','English']],
-    ['kao0211', 'Piano', ['Japanese','English']],
-    ['thekeyboardgrinder', 'Piano', ['Japanese','English']],
-    ['p1tatto', 'Piano', ['Japanese','English']],
-    ['xprotexxx', 'Piano', ['German','English']],
-    ['robdoesmusic', 'Piano', ['German','English']],
-    ['romantiku', 'Piano', ['German','English']],
-    ['nala_tanooki', 'Piano', ['English']],
-    ['dayymusic', 'Piano', ['English']],
-    ['missyalcazarmusic', 'Piano', ['English']],
-    ['tenkpiano', 'Piano', ['Korean']],
-    ['coldsheeppiano', 'Piano', ['Korean']],
-    ['musiciscode', 'Piano', ['English']],
-    ['hutch_md', 'Piano', ['English']],
-    ['myau2', 'Piano', ['English']],
-    ['mylivingroom', 'Piano', ['Portuguese','English']],
-    ['lennonpiano', 'Piano', ['English']],
-    ['cewbpianist', 'Piano', ['English']],
-    ['gipsonlens', 'Piano', ['English']],
-    ['animalisakeys', 'Piano', ['English']],
-    ['jinjintv', 'Piano', ['Chinese','English']],
-    ['jonnykuik', 'Piano', ['English']],
-    ['han_padahati', 'Piano', ['Chinese','English']],
-    ['jer_roque', 'Piano', ['English']],
-    ['harlosmusic', 'Piano', ['Chinese','English']],
-    ['robkovacs', 'Piano', ['English']],
-    ['hansolo1390', 'Piano', ['English']],
-    ['gobotkadet', 'Piano', ['English','Japanese']],
-    ['cerianmusic','Piano',['English']],
-    ['fuzzgotgames','Piano',['English']],
-    ['kanako_japan','Piano',['Japanese','English']],
-    ['sannihalla','Piano',['English']],
-    ['omaranbatawi','Piano',['English']],
-    ['saveasyouwish','Piano',['English']],
-    ['just_lina','Piano',['English']],
-    ['fiktah','Piano',['English']],
-    ['pianoryan','Piano',['English']],
-    ['kuyacymusic','Piano',['English']],
-    ['sarahmahoneymusic','Piano',['English']],
-    ['jackdaniil','Piano',['English']],
-    ['arilyna','Piano',['English']],
-    ['agnet75','Piano',['Spanish','English']],
-    ['leland_iko_music','Piano',['English','French']],
-    ['midnight_piano','Piano',['Korean','English']],
-    ['aori2313','Piano',['Korean','English']],
-    ['miamakesmusic','Piano',['Korean','English']],
-    ['pianistmiri','Piano',['Korean','English']],
-    ['ninamare','Piano',['Korean','English']],
-    ['firefly_piano', 'Piano', ['Korean','English','German']],
-    ['zuljanim', 'Piano', ['Korean','English']],
+    ['momostac_piano', 'Piano', ['Japanese','English'],['T']],
+    ['mamikopiano', 'Piano', ['Japanese','English'],['T']],
+    ['mamita24', 'Piano', ['Japanese','English'],['T']],
+    ['hepupiano', 'Piano', ['Japanese','English'],['T']],
+    ['kao0211', 'Piano', ['Japanese','English'],['T']],
+    ['thekeyboardgrinder', 'Piano', ['Japanese','English'],['T']],
+    ['p1tatto', 'Piano', ['Japanese','English'],['T']],
+    ['xprotexxx', 'Piano', ['German','English'],['T']],
+    ['robdoesmusic', 'Piano', ['German','English'],['T']],
+    ['romantiku', 'Piano', ['German','English'],['T']],
+    ['nala_tanooki', 'Piano', ['English'],['T']],
+    ['dayymusic', 'Piano', ['English'],['T']],
+    ['missyalcazarmusic', 'Piano', ['English'],['T']],
+    ['tenkpiano', 'Piano', ['Korean'],['T']],
+    ['coldsheeppiano', 'Piano', ['Korean'],['T']],
+    ['musiciscode', 'Piano', ['English'],['T']],
+    ['hutch_md', 'Piano', ['English'],['T']],
+    ['myau2', 'Piano', ['English'],['T']],
+    ['mylivingroom', 'Piano', ['Portuguese','English'],['T']],
+    ['lennonpiano', 'Piano', ['English'],['T']],
+    ['cewbpianist', 'Piano', ['English'],['T']],
+    ['gipsonlens', 'Piano', ['English'],['T']],
+    ['animalisakeys', 'Piano', ['English'],['T']],
+    ['jinjintv', 'Piano', ['Chinese','English'],['T']],
+    ['jonnykuik', 'Piano', ['English'],['T']],
+    ['han_padahati', 'Piano', ['Chinese','English'],['T']],
+    ['jer_roque', 'Piano', ['English'],['T']],
+    ['harlosmusic', 'Piano', ['Chinese','English'],['T']],
+    ['robkovacs', 'Piano', ['English'],['T']],
+    ['hansolo1390', 'Piano', ['English'],['T']],
+    ['gobotkadet', 'Piano', ['English','Japanese'],['T']],
+    ['cerianmusic','Piano',['English'],['T']],
+    ['fuzzgotgames','Piano',['English'],['T']],
+    ['kanako_japan','Piano',['Japanese','English'],['T']],
+    ['sannihalla','Piano',['English'],['T']],
+    ['omaranbatawi','Piano',['English'],['T']],
+    ['saveasyouwish','Piano',['English'],['T']],
+    ['just_lina','Piano',['English'],['T']],
+    ['fiktah','Piano',['English'],['T']],
+    ['pianoryan','Piano',['English'],['T']],
+    ['kuyacymusic','Piano',['English'],['T']],
+    ['sarahmahoneymusic','Piano',['English'],['T']],
+    ['jackdaniil','Piano',['English'],['T']],
+    ['arilyna','Piano',['English'],['T']],
+    ['agnet75','Piano',['Spanish','English'],['T']],
+    ['leland_iko_music','Piano',['English','French'],['T']],
+    ['midnight_piano','Piano',['Korean','English'],['T']],
+    ['aori2313','Piano',['Korean','English'],['C','81bd5b50f0c0728128442daf7db626fc']],
+    ['miamakesmusic','Piano',['Korean','English'],['T']],
+    ['pianistmiri','Piano',['Korean','English'],['T']],
+    ['ninamare','Piano',['Korean','English'],['T']],
+    ['firefly_piano', 'Piano', ['Korean','English','German'],['T']],
+    ['zuljanim', 'Piano', ['Korean','English'],['T']],
 
     // others //
-    ['mcd00dle', 'Others', ['English']],
-    ['mentalposition', 'Others', ['Japanese','English']],
-    ['winter_is_coming___', 'Others', ['Korean','English']],
-    ['febbydoto', 'Others', ['Korean','English']],
-    ['wheelerkk', 'Others', ['English']],
-    ['collyoxenfree', 'Others', ['English']],
-    ['krazee_aznnn', 'Others', ['English']],
-    ['notxzack', 'Others', ['English']],
-    ['seven_senshi', 'Others', ['English']],
-    ['hibanasound', 'Others', ['English']],
-    ['nervousharpist', 'Others', ['Japanese','English']],
-    ['oh_be_one','Others',['English','French']],
-    ['metal_lizard_jesus','Others',['English']],
-    ['passagallia','Others',['English']],
-    ['berceuse200','Others',['Spanish','English']],
-    ['the_friendly_fiddler','Others',['English']],
-    ['Secretfirefox','Others',['Portuguese','English']],
-    ['newbaroque','Others',['English']],
-    ['violinelf','Others',['English']],
-    ['henriviolin','Others',['Portuguese','English']],
+    ['mcd00dle', 'Others', ['English'],['T']],
+    ['mentalposition', 'Others', ['Japanese','English'],['T']],
+    ['winter_is_coming___', 'Others', ['Korean','English'],['T']],
+    ['febbydoto', 'Others', ['Korean','English'],['T']],
+    ['wheelerkk', 'Others', ['English'],['T']],
+    ['collyoxenfree', 'Others', ['English'],['T']],
+    ['krazee_aznnn', 'Others', ['English'],['T']],
+    ['notxzack', 'Others', ['English'],['T']],
+    ['seven_senshi', 'Others', ['English'],['T']],
+    ['hibanasound', 'Others', ['English'],['T']],
+    ['nervousharpist', 'Others', ['Japanese','English'],['T']],
+    ['oh_be_one','Others',['English','French'],['T']],
+    ['metal_lizard_jesus','Others',['English'],['T']],
+    ['passagallia','Others',['English'],['T']],
+    ['berceuse200','Others',['Spanish','English'],['T']],
+    ['the_friendly_fiddler','Others',['English'],['T']],
+    ['Secretfirefox','Others',['Portuguese','English'],['T']],
+    ['newbaroque','Others',['English'],['T']],
+    ['violinelf','Others',['English'],['T']],
+    ['henriviolin','Others',['Portuguese','English'],['T']],
 
     // singer //
-    ['yejuniverse','Singer',['Korean','English']],
-    ['k4st4nie','Singer',['German','English']],
-    ['jambreadmusic','Singer',['English']],
-    ['sokkie830','Singer',['English']],
-    ['cheropepero','Singer',['English']],
-    ['Bigbirbzmusic','Singer',['English']],
-    ['vitaminc525','Singer',['Chinese','English']],
-    ['Jrabbitlive','Singer',['Chinese','English']],
-    ['katieoflahertymusic','Singer',['English']],
-    ['jonlimusic','Singer',['English']],
-    ['cerianmusic','Singer',['English']],
-    ['Gangwon','Singer',['German','English','Korean']],
-    ['Matu','Singer',['Spanish','English']],
-    ['ellathebunnymom','Singer',['English']],
+    ['yejuniverse','Singer',['Korean','English'],['T']],
+    ['k4st4nie','Singer',['German','English'],['T']],
+    ['jambreadmusic','Singer',['English'],['T']],
+    ['sokkie830','Singer',['English'],['T']],
+    ['cheropepero','Singer',['English'],['T']],
+    ['Bigbirbzmusic','Singer',['English'],['T']],
+    ['vitaminc525','Singer',['Chinese','English'],['T']],
+    ['Jrabbitlive','Singer',['Chinese','English'],['T']],
+    ['katieoflahertymusic','Singer',['English'],['T']],
+    ['jonlimusic','Singer',['English'],['T']],
+    ['cerianmusic','Singer',['English'],['T']],
+    ['Gangwon','Singer',['German','English','Korean'],['T']],
+    ['Matu','Singer',['Spanish','English'],['T']],
+    ['ellathebunnymom','Singer',['English'],['T']],
    
 ]
 const flags = [
@@ -128,22 +128,20 @@ const categories = ['Piano','Singer','Others']
 // ================================================================
 let storedData = []
 
-async function getStreamerInfo(streamerName) {
-    if (streamerName === 'aori2313') {
+async function getStreamerInfo(streamerName,platform) {
+    if (platform[0] === 'C') {
   try {
-            const response = await fetch(`/proxy/channels/81bd5b50f0c0728128442daf7db626fc`);
+            const response = await fetch(`/proxy/channels/${platform[1]}`);
             if (!response.ok) {
                 throw new Error(`Error fetching data: ${response.status}`);
             }
             const data = await response.json();
-            console.log(data);
-
             return {
-                profileImage: data.content.profile_image_url,
-                user: streamerName,
-                displayName: data.content.channelName,
+                profileImage: data.content.channelImageUrl,
+                user: data.content.channelName,
+                displayName: streamerName,
                 online: data.content.openLive,
-                game: data.content.channelType
+                game: data.content.channelType.toLowerCase()
             };
         } catch (error) {
             console.error('Failed to fetch Chzzk data:', error.message);
@@ -175,10 +173,18 @@ async function initializeList() {
         loadingElement.style.display = 'flex';  // Show spinner
     }
     storedData = await Promise.all(
-        streamers.map(async ([streamerName, category, languages]) => {
-            const streamerInfo = await getStreamerInfo(streamerName);
+        streamers.map(async ([streamerName, category, languages,platform]) => {
+            const streamerInfo = await getStreamerInfo(streamerName,platform);
             if (streamerInfo) {
-                return [streamerInfo.displayName, [category, streamerInfo.game, streamerInfo.profileImage, streamerInfo.online, streamerInfo.user, languages]];
+                return [streamerInfo.displayName,
+                     [category,
+                     streamerInfo.game,
+                     streamerInfo.profileImage,
+                     streamerInfo.online,
+                     streamerInfo.user, 
+                     languages,
+                     platform]
+                    ];
             }
             return null;
         })
@@ -328,14 +334,14 @@ function showStreamersByCategory(category, page = 1) {
     const endIndex = startIndex + ITEMS_PER_PAGE;
     const paginatedStreamers = filteredStreamers.slice(startIndex, endIndex);
 
-    paginatedStreamers.forEach(([name, [category, game, profilePic, isLive, user, languages]]) => {
-        if (name === 'aori2313') {
-            console.log(true)
-        }
-         
+    paginatedStreamers.forEach(([name, [category, game, profilePic, isLive, user, languages, platform]]) => {
+       
+
         const li = document.createElement('li');
         if (isLive) {
-         if (game.toLowerCase() === 'music') {
+         if (platform[0] === 'C') {
+          li.classList.add('chzzk');
+         } else if (game.toLowerCase() === 'music') {
           li.classList.add('music');
          } else {
           li.classList.add('online');
@@ -358,7 +364,11 @@ function showStreamersByCategory(category, page = 1) {
         const truncatedCategory = truncateText(`${game}`, 20);
         const statusText = document.createElement('div');
         statusText.className = 'streamer-status';
+        if (platform[0] === 'C') {
+        statusText.textContent = isLive ? `라이브 ^^` : '오프라인 ㅜㅜ';
+        } else {
         statusText.textContent = isLive ? `Live (${truncatedCategory})` : 'Offline';
+        }
     
         const statusImg = document.createElement('img');
         statusImg.src = getStatusIcon(isLive);
@@ -383,12 +393,23 @@ function showStreamersByCategory(category, page = 1) {
         li.appendChild(textContainer);
         li.appendChild(langContainer);
     
+
+        let socialIcon 
+        let socialUrl
+        if (platform[0] === 'C') {
+          socialIcon = 'assets/CHZZK.png'
+          socialUrl = `https://chzzk.naver.com/${platform[1]}`
+        } else {
+          socialIcon = 'assets/TWITCH.png'
+          socialUrl = `https://www.twitch.tv/${user}`
+        }
+
         const socialContainer = document.createElement('div');
         socialContainer.className = 'social-container';
         const twitchBtn = createSocialMediaButton(
-            'assets/TWITCH.png',
+            socialIcon,
             'Twitch',
-            `https://www.twitch.tv/${user}`
+            socialUrl
         );
         socialContainer.appendChild(twitchBtn);
     
@@ -473,4 +494,3 @@ function updateUSTime() {
     }
     usTimeElement.textContent = `${usTimeString} HS`;
 }
-
