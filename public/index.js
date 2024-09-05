@@ -128,31 +128,29 @@ const categories = ['Piano','Singer','Others']
 // ================================================================
 let storedData = []
 
-
-
 async function getStreamerInfo(streamerName) {
     if (streamerName === 'aori2313') {
     async function getChzzkData() {
   const url = "https://api.chzzk.naver.com/service/v1/channels/81bd5b50f0c0728128442daf7db626fc";
-  
   try {
     const response = await fetch(url);
-    
     if (!response.ok) {
       throw new Error(`Error fetching data: ${response.status}`);
     }
-
     const data = await response.json(); // Parse the JSON from the response
-    console.log(data); // Display the data in the console
-    
-    // Use the data as needed
-    // For example, you can display it in your HTML like this:
-    document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+    return data;
   } catch (error) {
     console.error('Error:', error.message);
   }
 }
-getChzzkData()
+const chzzkData = getChzzkData()
+   return {
+           profileImage: chzzkData.content.profile_image_url,
+                user: streamerName,
+                displayName: chzzkData.content.channelName,
+                online: chzzkData.content.openLive,
+                game: chzzkData.content.channelType
+            }
     } else {
         try {
             const response = await fetch(`/api/streamer/${streamerName}`);
