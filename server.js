@@ -101,10 +101,5 @@ app.get('/proxy/channels/:streamerID', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Proxy server running at http://localhost:${port}`);
-});
-
-
-app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
