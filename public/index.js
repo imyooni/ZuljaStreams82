@@ -92,7 +92,6 @@ const streamers = [
     ['Jrabbitlive','Singer',['Chinese','English'],['T']],
     ['katieoflahertymusic','Singer',['English'],['T']],
     ['jonlimusic','Singer',['English'],['T']],
-    ['cerianmusic','Singer',['English'],['T']],
     ['Gangwon','Singer',['German','English','Korean'],['T']],
     ['Matu','Singer',['Spanish','English'],['T']],
     ['ellathebunnymom','Singer',['English'],['T']],
