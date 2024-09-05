@@ -130,38 +130,25 @@ let storedData = []
 
 async function getStreamerInfo(streamerName) {
     if (streamerName === 'aori2313') {
-   async function getChzzkData() {
-            const url = "https://api.chzzk.naver.com/service/v1/channels/81bd5b50f0c0728128442daf7db626fc";
-            try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error(`Error fetching data: ${response.status}`);
-                }
-                const data = await response.json(); // Parse the JSON from the response
-                return data;
-            } catch (error) {
-                console.error('Error:', error.message);
-                throw error; // Rethrow the error to handle it later
+  try {
+            const response = await fetch(`/proxy/channels/81bd5b50f0c0728128442daf7db626fc`);
+            if (!response.ok) {
+                throw new Error(`Error fetching data: ${response.status}`);
             }
-        }
+            const data = await response.json();
+            console.log(data);
 
-        try {
-            const chzzkData = await getChzzkData(); // Await the promise to get the result
-            console.log(chzzkData); // Log the data for debugging
-
-            // Return the desired data from the Chzzk API
             return {
-                profileImage: chzzkData.content.profile_image_url,
+                profileImage: data.content.profile_image_url,
                 user: streamerName,
-                displayName: chzzkData.content.channelName,
-                online: chzzkData.content.openLive,
-                game: chzzkData.content.channelType
+                displayName: data.content.channelName,
+                online: data.content.openLive,
+                game: data.content.channelType
             };
         } catch (error) {
             console.error('Failed to fetch Chzzk data:', error.message);
-            return null; // Handle the error and return a fallback value
-        }
-           
+            return null;
+        }  
     } else {
         try {
             const response = await fetch(`/api/streamer/${streamerName}`);
