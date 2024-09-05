@@ -74,6 +74,30 @@ app.get('/api/streamer/:name', async (req, res) => {
     }
 });
 
+app.get('/proxy/channels/:streamerID', async (req, res) => {
+    const streamerID = req.params.streamerID;
+    const apiUrl = `https://api.chzzk.naver.com/service/v1/channels/${streamerID}`;
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'GET',
+            headers: {
+                'User-Agent': 'Your User Agent', // Add required headers if needed
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (!response.ok) {
+            return res.status(response.status).json({ error: 'Error fetching data from Chzzk API' });
+        }
+
+        const data = await response.json();
+        res.json(data); // Send API data to the client
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
