@@ -144,13 +144,6 @@ async function getStreamerInfo(streamerName) {
   }
 }
 const chzzkData = getChzzkData()
-   return {
-           profileImage: chzzkData.content.profile_image_url,
-                user: streamerName,
-                displayName: chzzkData.content.channelName,
-                online: chzzkData.content.openLive,
-                game: chzzkData.content.channelType
-            }
     } else {
         try {
             const response = await fetch(`/api/streamer/${streamerName}`);
