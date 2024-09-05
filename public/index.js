@@ -14,7 +14,6 @@ const streamers = [
     ['robdoesmusic', 'Piano', ['German','English']],
     ['romantiku', 'Piano', ['German','English']],
     ['nala_tanooki', 'Piano', ['English']],
-    ['andy_boing', 'Piano',  ['English']],
     ['dayymusic', 'Piano', ['English']],
     ['missyalcazarmusic', 'Piano', ['English']],
     ['tenkpiano', 'Piano', ['Korean']],
@@ -51,10 +50,10 @@ const streamers = [
     ['agnet75','Piano',['Spanish','English']],
     ['leland_iko_music','Piano',['English','French']],
     ['midnight_piano','Piano',['Korean','English']],
+    ['aori2313','Piano',['Korean','English']],
     ['miamakesmusic','Piano',['Korean','English']],
     ['pianistmiri','Piano',['Korean','English']],
     ['ninamare','Piano',['Korean','English']],
-    ['bada_7077','Piano',['Korean','English']],
     ['firefly_piano', 'Piano', ['Korean','English','German']],
     ['zuljanim', 'Piano', ['Korean','English']],
 
@@ -128,18 +127,40 @@ const categories = ['Piano','Singer','Others']
 // • streamers array (twitch API)
 // ================================================================
 let storedData = []
+
+
+
 async function getStreamerInfo(streamerName) {
-    try {
-        const response = await fetch(`/api/streamer/${streamerName}`);
-        const streamerInfo = await response.json();
-        if (streamerInfo.error) {
-            console.error(streamerInfo.error);
+    if (streamerName === 'aori2313') {
+        getData()
+          async function getData() {
+            const url = "api.chzzk.naver.com/service/v1/channels/81bd5b50f0c0728128442daf7db626fc";
+            try {
+              const response = await fetch(url);
+              if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+              }
+          
+              const json = await response.json();
+              console.log(json);
+            } catch (error) {
+              console.error(error.message);
+            }
+          }
+
+    } else {
+        try {
+            const response = await fetch(`/api/streamer/${streamerName}`);
+            const streamerInfo = await response.json();
+            if (streamerInfo.error) {
+                console.error(streamerInfo.error);
+                return null;
+            }
+            return streamerInfo;
+        } catch (error) {
+            console.error('Error fetching Twitch streamer info:', error);
             return null;
         }
-        return streamerInfo;
-    } catch (error) {
-        console.error('Error fetching streamer info:', error);
-        return null;
     }
 }
 
@@ -307,10 +328,12 @@ function showStreamersByCategory(category, page = 1) {
     const paginatedStreamers = filteredStreamers.slice(startIndex, endIndex);
 
     paginatedStreamers.forEach(([name, [category, game, profilePic, isLive, user, languages]]) => {
+        if (name === 'aori2313') {
+            console.log(true)
+        }
+         
         const li = document.createElement('li');
-       // li.classList.add(isLive ? 'online' : 'offline'); // Apply the correct class
         if (isLive) {
-            console.log(game.toLowerCase() === 'music')
          if (game.toLowerCase() === 'music') {
           li.classList.add('music');
          } else {
