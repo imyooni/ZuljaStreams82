@@ -35,6 +35,7 @@ const streamers = [
     ['harlosmusic', 'Piano', ['Chinese','English'],['T']],
     ['robkovacs', 'Piano', ['English'],['T']],
     ['hansolo1390', 'Piano', ['English'],['T']],
+    ['karacomparetto', 'Piano', ['English'],['T']],
     ['gobotkadet', 'Piano', ['English','Japanese'],['T']],
     ['cerianmusic','Piano',['English'],['T']],
     ['fuzzgotgames','Piano',['English'],['T']],
