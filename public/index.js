@@ -84,6 +84,8 @@ const streamers = [
     ['violinelf','Others',['English'],['T']],
     ['henriviolin','Others',['Portuguese','English'],['T']],
     ['u_grandmother','Others',['Korean','English'],['C','2c0c0ff859f6cb8045a3cdf99b3b9b54']],
+    ['yodel_ay','Others',['Korean','English'],['C','d313d208af312efb8dc7184d9564be3d']],
+    
 
     // singer //
     ['yejuniverse','Singer',['Korean','English'],['T']],
