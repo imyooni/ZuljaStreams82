@@ -53,7 +53,7 @@ const streamers = [
     ['agnet75','Piano',['Spanish','English'],['T']],
     ['leland_iko_music','Piano',['English','French'],['T']],
     ['midnight_piano','Piano',['Korean','English'],['T']],
-    ['aori2313','Piano',['Korean','English'],['C','81bd5b50f0c0728128442daf7db626fc']],
+    ['aori2313','Piano',['Korean','English'],['C','81bd5b50f0c0728128442daf7db626fc']],    
     ['miamakesmusic','Piano',['Korean','English'],['T']],
     ['pianistmiri','Piano',['Korean','English'],['T']],
     ['ninamare','Piano',['Korean','English'],['T']],
@@ -81,6 +81,7 @@ const streamers = [
     ['newbaroque','Others',['English'],['T']],
     ['violinelf','Others',['English'],['T']],
     ['henriviolin','Others',['Portuguese','English'],['T']],
+    ['u_grandmother','Piano',['Korean','English'],['C','2c0c0ff859f6cb8045a3cdf99b3b9b54']],
 
     // singer //
     ['yejuniverse','Singer',['Korean','English'],['T']],
@@ -368,7 +369,7 @@ function showStreamersByCategory(category, page = 1) {
         const statusText = document.createElement('div');
         statusText.className = 'streamer-status';
         if (platform[0] === 'C') {
-        statusText.textContent = isLive ? `라이브 ^^` : '오프라인 ㅜㅜ';
+        statusText.textContent = isLive ? `Live` : 'Offline';
         } else {
         statusText.textContent = isLive ? `Live (${truncatedCategory})` : 'Offline';
         }
