@@ -343,7 +343,8 @@ function showStreamersByCategory(category, page = 1) {
     const paginatedStreamers = filteredStreamers.slice(startIndex, endIndex);
 
     paginatedStreamers.forEach(([name, [category, game, profilePic, isLive, user, languages, platform]]) => {
-       
+
+    if (game === null) {game = "---"}    
      console.log(name,game)
         const li = document.createElement('li');
         if (isLive) {
