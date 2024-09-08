@@ -344,7 +344,7 @@ function showStreamersByCategory(category, page = 1) {
 
     paginatedStreamers.forEach(([name, [category, game, profilePic, isLive, user, languages, platform]]) => {
        
-
+     console.log(name,game)
         const li = document.createElement('li');
         if (isLive) {
          if (platform[0] === 'C') {
