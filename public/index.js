@@ -54,8 +54,7 @@ const streamers = [
     ['leland_iko_music','Piano',['English','French'],['T']],
     ['midnight_piano','Piano',['Korean','English'],['T']],
     ['aori2313','Piano',['Korean','English'],['C','81bd5b50f0c0728128442daf7db626fc']],    
-    ['soirue','Piano',['Korean'],['C','aaa0a5597d055ab3e33b22207dbb6f24']],   
-   
+    ['soirue','Piano',['Korean'],['C','aaa0a5597d055ab3e33b22207dbb6f24']],
     ['miamakesmusic','Piano',['Korean','English'],['T']],
     ['pianistmiri','Piano',['Korean','English'],['T']],
     ['ninamare','Piano',['Korean','English'],['T']],
@@ -92,6 +91,7 @@ const streamers = [
     ['k4st4nie','Singer',['German','English'],['T']],
     ['jambreadmusic','Singer',['English'],['T']],
     ['sokkie830','Singer',['English'],['T']],
+    ['nicoleforcadela','Singer',['English'],['T']],
     ['magic_mandofox','Singer',['English'],['T']],
     ['cheropepero','Singer',['English'],['T']],
     ['Bigbirbzmusic','Singer',['English'],['T']],
