@@ -51,6 +51,7 @@ const streamers = [
     ['jackdaniil','Piano',['English'],['T']],
     ['arilyna','Piano',['English'],['T']],
     ['agnet75','Piano',['Spanish','English'],['T']],
+    ['otterlymusic','Piano',['Spanish','English'],['T']],
     ['leland_iko_music','Piano',['English','French'],['T']],
     ['midnight_piano','Piano',['Korean','English'],['T']],
     ['aori2313','Piano',['Korean','English'],['C','81bd5b50f0c0728128442daf7db626fc']],    
