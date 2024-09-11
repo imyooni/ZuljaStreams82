@@ -412,7 +412,7 @@ function showStreamersByCategory(category, page = 1) {
           socialUrl = `https://chzzk.naver.com/${platform[1]}`
         } else {
           socialIcon = 'assets/TWITCH.png'
-          socialUrl = `https://www.twitch.tv/${user}`
+          socialUrl = `https://www.twitch.tv/${name}`
         }
 
         const socialContainer = document.createElement('div');
