@@ -97,6 +97,7 @@ const streamers = [
     ['cheropepero','Singer',['English'],['T']],
     ['Bigbirbzmusic','Singer',['English'],['T']],
     ['vitaminc525','Singer',['Chinese','English'],['T']],
+    ['jasminexu007', 'Singer', ['Chinese','English'],['T']],
     ['Jrabbitlive','Singer',['Chinese','English'],['T']],
     ['katieoflahertymusic','Singer',['English'],['T']],
     ['jonlimusic','Singer',['English'],['T']],
