@@ -94,6 +94,7 @@ const streamers = [
     ['jambreadmusic','Singer',['English'],['T']],
     ['sokkie830','Singer',['English'],['T']],
     ['nicoleforcadela','Singer',['English'],['T']],
+    ['ninsdb','Singer',['English'],['T']],
     ['magic_mandofox','Singer',['English'],['T']],
     ['cheropepero','Singer',['English'],['T']],
     ['Bigbirbzmusic','Singer',['English'],['T']],
