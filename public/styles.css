@@ -395,6 +395,8 @@ ul {
 
 /* Social media buttons container */
 .social-container {
+    height: 24px;
+     margin-bottom: 50px;
     margin-left: 10px;
     display: flex;
     gap: 5px; /* Space between social buttons */
@@ -409,7 +411,6 @@ ul {
 
 /* Social media icon */
 .social-icon {
-    margin-bottom: 50px;
     width: 24px; /* Adjust icon size */
     height: 24px; /* Adjust icon size */
     object-fit: contain; /* Ensure proper scaling */
