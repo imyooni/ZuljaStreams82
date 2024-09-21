@@ -281,6 +281,33 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     updatePaginationButtons();
+
+    return
+    const webhookURL = 'https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN';
+            
+            const message = {
+                content: 'The page has fully loaded.',
+                username: 'Webhook Bot',
+            };
+
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(message),
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Message sent to Discord successfully!');
+                } else {
+                    console.error('Failed to send message to Discord:', response.statusText);
+                }
+            })
+            .catch(error => console.error('Error sending message to Discord:', error));
+        });
+
+    
 });
 
 // ================================================================
