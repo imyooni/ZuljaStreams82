@@ -4,7 +4,8 @@ import { config } from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-config(); // This loads environment variables from .env file
+// Load environment variables from .env file
+config();
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -12,15 +13,47 @@ const port = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public'))); // Serve static files
 
+// Home route
 app.get('/', (req, res) => {
-    res.send('Welcome to the Twitch Streamer API!');
+    res.send('Welcome to the Twitch Streamer API and Discord Webhook Service!');
 });
 
+// Route to send message to Discord webhook
+app.post('/send-webhook', async (req, res) => {
+    const webhookURL = process.env.WEBHOOK_URL;
+    const { content, username } = req.body;
+
+    try {
+        const response = await fetch(webhookURL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                content: content || 'Default message from webhook',
+                username: username || 'Webhook Bot',
+            }),
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to send webhook: ${response.statusText}`);
+        }
+
+        res.status(200).json({ message: 'Message sent to Discord successfully!' });
+    } catch (error) {
+        console.error('Error sending message to Discord:', error);
+        res.status(500).json({ error: 'Failed to send message' });
+    }
+});
+
+// Route to get Twitch streamer info by name
 app.get('/api/streamer/:name', async (req, res) => {
     const streamerName = req.params.name;
+
     try {
         const userUrl = `https://api.twitch.tv/helix/users?login=${streamerName}`;
         const userResponse = await fetch(userUrl, {
@@ -30,6 +63,7 @@ app.get('/api/streamer/:name', async (req, res) => {
             }
         });
         const userData = await userResponse.json();
+
         if (userData.data.length > 0) {
             const user = userData.data[0];
             const userId = user.id;
@@ -44,6 +78,7 @@ app.get('/api/streamer/:name', async (req, res) => {
             const streamData = await streamResponse.json();
             const isLive = streamData.data.length > 0;
             let gameCategory = null;
+
             if (isLive) {
                 const gameId = streamData.data[0].game_id;
 
@@ -59,6 +94,7 @@ app.get('/api/streamer/:name', async (req, res) => {
                     gameCategory = gameData.data[0].name;
                 }
             }
+
             return res.json({
                 profileImage: user.profile_image_url,
                 user: user.display_name,
@@ -67,6 +103,7 @@ app.get('/api/streamer/:name', async (req, res) => {
                 game: gameCategory
             });
         }
+
         return res.status(404).json({ error: 'Streamer not found' });
     } catch (error) {
         console.error(error);
@@ -74,6 +111,7 @@ app.get('/api/streamer/:name', async (req, res) => {
     }
 });
 
+// Proxy route for Chzzk API
 app.get('/proxy/channels/:streamerID', async (req, res) => {
     const streamerID = req.params.streamerID;
     const apiUrl = `https://api.chzzk.naver.com/service/v1/channels/${streamerID}`;
@@ -99,6 +137,7 @@ app.get('/proxy/channels/:streamerID', async (req, res) => {
     }
 });
 
+// Start the server
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
