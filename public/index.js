@@ -251,14 +251,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         refreshButton.addEventListener('click', refreshList);
     }
 
-    // Initial page load logic
-    if (loadingElement && loadingTextElement && loadingGifElement) {
-        const loadingTexts = ['Loading...', 'Please wait...', 'Fetching data...'];
-        const randomText = loadingTexts[Math.floor(Math.random() * loadingTexts.length)];
-        loadingTextElement.textContent = randomText;
-        loadingGifElement.src = 'path_to_your_loading_gif.gif'; // Set the loading gif source
-        loadingElement.style.display = 'flex'; // Show loading screen
-    }
+    // Initial load when the page is first opened
+        if (loadingElement && loadingTextElement && loadingGifElement) {
+            const randomText = loadingTexts[Math.floor(Math.random() * loadingTexts.length)];
+            loadingTextElement.textContent = randomText;
+            loadingGifElement.src = loadingGif; // Set src from config
+            loadingElement.style.display = 'flex'; // Show the loading screen
+        }
 
     // Initial loading of the list
     await initializeList();
@@ -299,8 +298,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     updatePaginationButtons();
 
+    /*
     // Sending message to Discord webhook
-    const webhookURL = 'https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN'; // Replace with your actual webhook URL
+    const webhookURL = `https://discord.com/api/webhooks/${process.env.WEBHOOK}`;
 
     const message = {
         content: 'The page has fully loaded.',
@@ -322,6 +322,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     })
     .catch(error => console.error('Error sending message to Discord:', error));
+   */ 
 });
 
 
