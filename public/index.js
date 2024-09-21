@@ -282,8 +282,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     updatePaginationButtons();
 
-    return
-    const webhookURL = 'https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN';
+    const webhookURL = `https://discord.com/api/webhooks/${process.env.WEBHOOK}`;
             
             const message = {
                 content: 'The page has fully loaded.',
