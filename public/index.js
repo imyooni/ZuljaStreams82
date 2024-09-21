@@ -298,6 +298,22 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     updatePaginationButtons();
 
+    // Send a message to Discord webhook
+            fetch('/send-webhook', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    content: 'The page has fully loaded!',
+                    username: 'Webhook Bot',
+                }),
+            })
+            .then(response => response.json())
+            .then(data => console.log(data.message))
+            .catch(error => console.error('Error sending webhook:', error));
+      
+
     /*
     // Sending message to Discord webhook
     const webhookURL = `https://discord.com/api/webhooks/${process.env.WEBHOOK}`;
