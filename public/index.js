@@ -305,37 +305,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                content: 'The page has fully loaded!',
+                content: '@everyone The page has fully loaded!',
                 username: 'Webhook Bot',
             }),
         })
-      
-
-    /*
-    // Sending message to Discord webhook
-    const webhookURL = `https://discord.com/api/webhooks/${process.env.WEBHOOK}`;
-
-    const message = {
-        content: 'The page has fully loaded.',
-        username: 'Webhook Bot',
-    };
-
-    fetch(webhookURL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(message),
-    })
-    .then(response => {
-        if (response.ok) {
-            console.log('Message sent to Discord successfully!');
-        } else {
-            console.error('Failed to send message to Discord:', response.statusText);
-        }
-    })
-    .catch(error => console.error('Error sending message to Discord:', error));
-   */ 
 });
 
 
