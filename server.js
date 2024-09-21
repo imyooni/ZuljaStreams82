@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
 // Route to send message to Discord webhook
 app.post('/send-webhook', async (req, res) => {
-    const webhookURL = process.env.WEBHOOK_URL;
+    const webhookURL = process.env.WEBHOOK;
     const { content, username } = req.body;
 
     try {
