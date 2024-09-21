@@ -220,51 +220,68 @@ document.addEventListener('DOMContentLoaded', async () => {
     const loadingTextElement = document.getElementById('loading-text');
     const loadingGifElement = document.getElementById('loading-gif');
 
+    // Pagination buttons
+    const prevButton = document.getElementById('prev-button');
+    const nextButton = document.getElementById('next-button');
+    const pageIndicator = document.getElementById('page-indicator');
+    
+    let currentPage = 1;
+    let totalPages = 10; // Replace this with dynamic calculation
+    let currentCategory = 'Piano'; // Default category
+
     async function refreshList() {
         if (mainContentElement) mainContentElement.style.display = 'none';
         if (refreshButton) refreshButton.style.display = 'none';
         if (loadingElement) loadingElement.style.display = 'flex';
         if (categoryButtonsContainer) categoryButtonsContainer.innerHTML = '';
         if (streamersContainer) streamersContainer.innerHTML = '';
+        
         await initializeList();
         createCategoryButtons();
+        
         if (loadingElement) loadingElement.style.display = 'none';
         if (mainContentElement) mainContentElement.style.display = 'block';
         if (refreshButton) refreshButton.style.display = 'block';
-        setCategory('Piano'); 
+
+        setCategory(currentCategory); 
     }
 
+    // Refresh list on button click
     if (refreshButton) {
         refreshButton.addEventListener('click', refreshList);
     }
 
-        // Initial load when the page is first opened
-        if (loadingElement && loadingTextElement && loadingGifElement) {
-            const randomText = loadingTexts[Math.floor(Math.random() * loadingTexts.length)];
-            loadingTextElement.textContent = randomText;
-            loadingGifElement.src = loadingGif; // Set src from config
-            loadingElement.style.display = 'flex'; // Show the loading screen
-        }
+    // Initial page load logic
+    if (loadingElement && loadingTextElement && loadingGifElement) {
+        const loadingTexts = ['Loading...', 'Please wait...', 'Fetching data...'];
+        const randomText = loadingTexts[Math.floor(Math.random() * loadingTexts.length)];
+        loadingTextElement.textContent = randomText;
+        loadingGifElement.src = 'path_to_your_loading_gif.gif'; // Set the loading gif source
+        loadingElement.style.display = 'flex'; // Show loading screen
+    }
 
-        
+    // Initial loading of the list
     await initializeList();
     createCategoryButtons();
 
+    // Hide loading and display main content
     if (loadingElement) loadingElement.style.display = 'none';
     if (mainContentElement) mainContentElement.style.display = 'block';
     if (refreshButton) refreshButton.style.display = 'block';
-    
+
     setCategory('Piano');
     updateUSTime();
     setInterval(updateUSTime, 1000);
 
+    // Update pagination buttons state
     function updatePaginationButtons() {
         pageIndicator.textContent = `Page ${currentPage} of ${totalPages}`;
         prevButton.disabled = currentPage <= 1;
         nextButton.disabled = currentPage >= totalPages;
     }
 
-    prevButton.addEventListener('click', () => {
+    // Pagination button listeners
+    prevButton?.addEventListener('click', () => {
         if (currentPage > 1) {
             currentPage--;
             showStreamersByCategory(currentCategory, currentPage);
@@ -272,7 +289,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    nextButton.addEventListener('click', () => {
+    nextButton?.addEventListener('click', () => {
         if (currentPage < totalPages) {
             currentPage++;
             showStreamersByCategory(currentCategory, currentPage);
@@ -282,32 +299,31 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     updatePaginationButtons();
 
-    const webhookURL = `https://discord.com/api/webhooks/${process.env.WEBHOOK}`;
-            
-            const message = {
-                content: 'The page has fully loaded.',
-                username: 'Webhook Bot',
-            };
+    // Sending message to Discord webhook
+    const webhookURL = 'https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN'; // Replace with your actual webhook URL
 
-            fetch(webhookURL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(message),
-            })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Message sent to Discord successfully!');
-                } else {
-                    console.error('Failed to send message to Discord:', response.statusText);
-                }
-            })
-            .catch(error => console.error('Error sending message to Discord:', error));
-        });
+    const message = {
+        content: 'The page has fully loaded.',
+        username: 'Webhook Bot',
+    };
 
-    
+    fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(message),
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Message sent to Discord successfully!');
+        } else {
+            console.error('Failed to send message to Discord:', response.statusText);
+        }
+    })
+    .catch(error => console.error('Error sending message to Discord:', error));
 });
+
 
 // ================================================================
 // • Category buttons
