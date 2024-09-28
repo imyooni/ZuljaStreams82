@@ -3,6 +3,7 @@
 // ================================================================
 const streamers = [
     // piano //
+    ['lucaskingpiano', 'Piano', ['English'],['T']],
     ['momostac_piano', 'Piano', ['Japanese','English'],['T']],
     ['mamikopiano', 'Piano', ['Japanese','English'],['T']],
     ['mamita24', 'Piano', ['Japanese','English'],['T']],
@@ -123,10 +124,15 @@ const loadingGif = 'assets/zuljaLoading.gif'
 const loadingTexts = [
     "Calling Yooni...",
     "안녕 바보 ㅋ.ㅋ",
+    "줄하 ㅎ1ㅎ1",
+    "더자요!",
+    "잠이안와요?",
     "Zuljanim Is Still The Best Here Kappa.",
-    "!sr Banana Cha Cha",
+    "!sr Banana Cha Cha.",
+    "Anything Is Fine...",
     "Rip Twitch Korea Sadge.",
     "Loading The SuperStars...",
+    "Hi Banana Baby ^^",
     "Want Puzzle Type Zulja.",
     "Hacking Your Device... JK LUL",
     "So Lazy Just Like You KEKW."
@@ -208,6 +214,7 @@ async function initializeList() {
     }
 }
 
+
 // ================================================================
 // • Loaded Page
 // ================================================================
@@ -220,38 +227,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     const loadingTextElement = document.getElementById('loading-text');
     const loadingGifElement = document.getElementById('loading-gif');
 
-    // Pagination buttons
-    const prevButton = document.getElementById('prev-button');
-    const nextButton = document.getElementById('next-button');
-    const pageIndicator = document.getElementById('page-indicator');
-    
-    let currentPage = 1;
-    let totalPages = 10; // Replace this with dynamic calculation
-    let currentCategory = 'Piano'; // Default category
-
     async function refreshList() {
         if (mainContentElement) mainContentElement.style.display = 'none';
         if (refreshButton) refreshButton.style.display = 'none';
         if (loadingElement) loadingElement.style.display = 'flex';
         if (categoryButtonsContainer) categoryButtonsContainer.innerHTML = '';
         if (streamersContainer) streamersContainer.innerHTML = '';
-        
         await initializeList();
         createCategoryButtons();
-        
         if (loadingElement) loadingElement.style.display = 'none';
         if (mainContentElement) mainContentElement.style.display = 'block';
         if (refreshButton) refreshButton.style.display = 'block';
-
-        setCategory(currentCategory); 
+        setCategory('Piano'); 
     }
 
-    // Refresh list on button click
     if (refreshButton) {
         refreshButton.addEventListener('click', refreshList);
     }
 
-    // Initial load when the page is first opened
+        // Initial load when the page is first opened
         if (loadingElement && loadingTextElement && loadingGifElement) {
             const randomText = loadingTexts[Math.floor(Math.random() * loadingTexts.length)];
             loadingTextElement.textContent = randomText;
@@ -259,28 +253,25 @@ document.addEventListener('DOMContentLoaded', async () => {
             loadingElement.style.display = 'flex'; // Show the loading screen
         }
 
-    // Initial loading of the list
+        
     await initializeList();
     createCategoryButtons();
 
-    // Hide loading and display main content
     if (loadingElement) loadingElement.style.display = 'none';
     if (mainContentElement) mainContentElement.style.display = 'block';
     if (refreshButton) refreshButton.style.display = 'block';
-
+    
     setCategory('Piano');
     updateUSTime();
     setInterval(updateUSTime, 1000);
 
-    // Update pagination buttons state
     function updatePaginationButtons() {
         pageIndicator.textContent = `Page ${currentPage} of ${totalPages}`;
         prevButton.disabled = currentPage <= 1;
         nextButton.disabled = currentPage >= totalPages;
     }
 
-    // Pagination button listeners
-    prevButton?.addEventListener('click', () => {
+    prevButton.addEventListener('click', () => {
         if (currentPage > 1) {
             currentPage--;
             showStreamersByCategory(currentCategory, currentPage);
@@ -288,7 +279,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    nextButton?.addEventListener('click', () => {
+    nextButton.addEventListener('click', () => {
         if (currentPage < totalPages) {
             currentPage++;
             showStreamersByCategory(currentCategory, currentPage);
@@ -298,17 +289,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     updatePaginationButtons();
 
-    // Send a message to Discord webhook
-            fetch('/send-webhook', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                content: '@everyone The page has fully loaded!',
-                username: 'Webhook Bot',
-            }),
-        })
+    
+   // Send a message to Discord webhook
+   let w = [window.screen.width, window.screen.height]
+   if (w[0] === 1600 && w[1] === 900) {
+   } else {
+    fetch('/send-webhook', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            content: `@everyone The page has fully loaded! ${w}`,
+            username: 'Webhook Bot',
+        }),
+    })
+   }
+      
 });
 
 
