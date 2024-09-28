@@ -293,6 +293,7 @@ document.addEventListener('DOMContentLoaded', async () => {
    // Send a message to Discord webhook
    let w = [window.screen.width, window.screen.height]
    if (w[0] === 1600 && w[1] === 900) {
+   } else if (w[0] === 1606 && w[1] === 780) {
    } else {
     fetch('/send-webhook', {
         method: 'POST',
