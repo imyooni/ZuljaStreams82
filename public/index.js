@@ -4,6 +4,7 @@
 const streamers = [
     // piano //
     ['lucaskingpiano', 'Piano', ['English'],['T']],
+    ['hajimemusic', 'Piano', ['English'],['T']],
     ['momostac_piano', 'Piano', ['Japanese','English'],['T']],
     ['mamikopiano', 'Piano', ['Japanese','English'],['T']],
     ['mamita24', 'Piano', ['Japanese','English'],['T']],
