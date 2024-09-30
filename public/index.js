@@ -290,11 +290,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     updatePaginationButtons();
 
-    
-   // Send a message to Discord webhook
-   let w = [window.screen.width, window.screen.height]
+   let w = [screen.width, screen.height]
    if (w[0] === 1600 && w[1] === 900) {
-   } else if (w[0] === 1606 && w[1] === 780) {
    } else if (w[0] === 360 && w[1] === 640) {    
    } else {
     fetch('/send-webhook', {
