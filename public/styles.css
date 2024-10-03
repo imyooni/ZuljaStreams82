@@ -334,7 +334,7 @@ ul li {
 
 /* Online/Offline color customization */
 ul li.online {
-    background-color: #dc3545; /* Red for online */
+    background-color: #FF7F50; /* Red for online */
     border: 1px solid #000000; /* Add border with thickness and color */
 }
 
