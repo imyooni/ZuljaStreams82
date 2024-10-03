@@ -109,6 +109,7 @@ const streamers = [
     ['Matu','Singer',['Spanish','English'],['T']],
     ['ellathebunnymom','Singer',['English'],['T']],
     ['kori0727','Singer',['Korean'],['C','dc296b356b142e8be62909568657d038']],
+    ['delnae','Singer',['Korean'],['C','012c48d0dcbba0025d9b6aea6f160fa1']],
    
 ]
 const flags = [
