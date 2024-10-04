@@ -15,6 +15,7 @@ const streamers = [
     ['xprotexxx', 'Piano', ['German','English'],['T']],
     ['robdoesmusic', 'Piano', ['German','English'],['T']],
     ['romantiku', 'Piano', ['German','English'],['T']],
+    ['nesskeyz', 'Piano', ['German','English'],['T']],
     ['nala_tanooki', 'Piano', ['English'],['T']],
     ['dayymusic', 'Piano', ['English'],['T']],
     ['missyalcazarmusic', 'Piano', ['English'],['T']],
