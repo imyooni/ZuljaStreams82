@@ -292,21 +292,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     updatePaginationButtons();
 
-   let w = [screen.width, screen.height]
-   if (w[0] === 1600 && w[1] === 900) {
-   } else if (w[0] === 360 && w[1] === 640) {    
-   } else {
-    fetch('/send-webhook', {
+   fetch('/send-webhook', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            content: `@everyone The page has fully loaded! ${w}`,
+            content: `@here The page has fully loaded!`,
             username: 'Webhook Bot',
         }),
     })
-   }
       
 });
 
