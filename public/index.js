@@ -3,6 +3,7 @@
 // ================================================================
 const streamers = [
     // piano //
+    ['samstathampiano', 'Piano', ['English'],['T']],
     ['robby_key', 'Piano', ['English'],['T']],
     ['lucaskingpiano', 'Piano', ['English'],['T']],
     ['hajimemusic', 'Piano', ['English'],['T']],
