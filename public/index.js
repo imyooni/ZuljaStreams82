@@ -3,9 +3,9 @@
 // ================================================================
 const streamers = [
     // piano //
+    ['chewiemelodies', 'Piano', ['English'],['T']],
     ['samstathampiano', 'Piano', ['English'],['T']],
     ['robby_key', 'Piano', ['English'],['T']],
-    ['lucaskingpiano', 'Piano', ['English'],['T']],
     ['hajimemusic', 'Piano', ['English'],['T']],
     ['momostac_piano', 'Piano', ['Japanese','English'],['T']],
     ['mamikopiano', 'Piano', ['Japanese','English'],['T']],
