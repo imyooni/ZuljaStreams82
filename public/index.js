@@ -3,6 +3,8 @@
 // ================================================================
 const streamers = [
     // piano //
+    
+    ['sarahcoponat', 'Piano', ['English','French'],['T']],
     ['chewiemelodies', 'Piano', ['English'],['T']],
     ['samstathampiano', 'Piano', ['English'],['T']],
     ['robby_key', 'Piano', ['English'],['T']],
