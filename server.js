@@ -19,37 +19,8 @@ app.use(express.static(path.join(__dirname, 'public'))); // Serve static files
 
 // Home route
 app.get('/', (req, res) => {
-    res.send('Welcome to the Twitch Streamer API and Discord Webhook Service!');
+    res.send('Welcome to the Streamers List!');
 });
-
-// Route to send message to Discord webhook
-app.post('/send-webhook', async (req, res) => {
-    const webhookURL = process.env.WEBHOOK;
-    const { content, username } = req.body;
-
-    try {
-        const response = await fetch(webhookURL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                content: content || 'Default message from webhook',
-                username: username || 'Webhook Bot',
-            }),
-        });
-
-        if (!response.ok) {
-            throw new Error(`Failed to send webhook: ${response.statusText}`);
-        }
-
-        res.status(200).json({ message: 'Message sent to Discord successfully!' });
-    } catch (error) {
-        console.error('Error sending message to Discord:', error);
-        res.status(500).json({ error: 'Failed to send message' });
-    }
-});
-
 
 // Route to get Twitch streamer info by name
 app.get('/api/streamer/:name', async (req, res) => {
