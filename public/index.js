@@ -21,7 +21,6 @@ const streamers = [
     ['romantiku', 'Piano', ['German','English'],['T']],
     ['nesskeyz', 'Piano', ['German','English'],['T']],
     ['nala_tanooki', 'Piano', ['English'],['T']],
-    ['dayymusic', 'Piano', ['English'],['T']],
     ['missyalcazarmusic', 'Piano', ['English'],['T']],
     ['tenkpiano', 'Piano', ['Korean'],['T']],
     ['coldsheeppiano', 'Piano', ['Korean'],['T']],
@@ -30,7 +29,7 @@ const streamers = [
     ['myau2', 'Piano', ['English'],['T']],
     ['mylivingroom', 'Piano', ['Portuguese','English'],['T']],
     ['lennonpiano', 'Piano', ['English'],['T']],
-    ['cewbpianist', 'Piano', ['English'],['T']],
+    ['leveluppianocewb', 'Piano', ['English'],['T']],
     ['gipsonlens', 'Piano', ['English'],['T']],
     ['animalisakeys', 'Piano', ['English'],['T']],
     ['jinjintv', 'Piano', ['Chinese','English'],['T']],
@@ -295,17 +294,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     updatePaginationButtons();
-
-   fetch('/send-webhook', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            content: `@here The page has fully loaded!`,
-            username: 'Webhook Bot',
-        }),
-    })
       
 });
 
