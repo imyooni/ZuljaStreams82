@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Favs LUL</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="loading">
+        <div id="loading-text">Loading...</div>
+        <img id="loading-gif" src="" alt="Loading...">
+    </div>
+    
+    <!-- Main content container -->
+    <div id="main-content" style="display: none;">
+        <h1><img src="assets/zuljaPiano.gif" alt="LUL" class="h1-image">Your Favs LUL</h1>
+        <div id="category-buttons"></div>
+        
+        <div id="pagination-controls">
+            <button id="prev-button" class="pagination-button" disabled>Prev</button>
+            <span id="page-indicator">Page 1 of 1</span>
+            <button id="next-button" class="pagination-button">Next</button>
+        </div>
+        <ul id="streamers-container"></ul>
+        
+        
+        <button id="refresh-list" style="display: none;">Refresh list</button>
+
+        <!-- US Time display below the refresh button -->
+        <div id="us-time" style="text-align: center; padding: 10px; font-size: 1.5em;">
+            <img id="us-flag" src="" alt="US Flag" style="height: 20px; vertical-align: middle; margin-right: 10px;">
+            <span id="time-text"></span>
+        </div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+
+
+</html>
