@@ -159,7 +159,7 @@ async function getStreamerInfo(streamerName, platform) {
   if (platform[0] === 'C') {
     // 🔹 Chzzk via your proxy on Render
     try {
-      const response = await fetch(`https://yunibot.onrender.com/proxy/channels/${platform[1]}`);
+      const response = await fetch(`https://zuljababot.onrender.com/proxy/channels/${platform[1]}`);
       if (!response.ok) {
         throw new Error(`Error fetching Chzzk data: ${response.status}`);
       }
@@ -178,7 +178,7 @@ async function getStreamerInfo(streamerName, platform) {
   } else {
     // 🔹 Twitch via your backend
     try {
-      const response = await fetch(`https://yunibot.onrender.com/api/streamer/${streamerName}`);
+      const response = await fetch(`https://zuljababot.onrender.com/api/streamer/${streamerName}`);
       if (!response.ok) {
         throw new Error(`Error fetching Twitch data: ${response.status}`);
       }
