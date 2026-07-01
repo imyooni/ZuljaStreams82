@@ -55,7 +55,7 @@ const streamers = [
     ['just_lina','Piano',['English'],['T']],
     ['fiktah','Piano',['English'],['T']],
     ['pianoryan','Piano',['English'],['T']],
-    ['kuyacymusic','Piano',['English'],['T']],
+    ['ThatGuyKuyaCy','Piano',['English'],['T']],
     ['sarahmahoneymusic','Piano',['English'],['T']],
     ['jackdaniil','Piano',['English'],['T']],
     ['arilyna','Piano',['English'],['T']],
