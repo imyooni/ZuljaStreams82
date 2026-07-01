@@ -38,6 +38,7 @@ const streamers = [
     ['jonnykuik', 'Piano', ['English'],['T']],
     ['andy_boing', 'Piano', ['English'],['T']],
     ['bada_7077', 'Piano', ['Korean','English'],['T']],
+    ['vivaceconfuoco', 'Piano', ['Korean','English'],['T']],
     ['han_padahati', 'Piano', ['Chinese','English'],['T']],
     ['jer_roque', 'Piano', ['English'],['T']],
     ['harlos_0517', 'Piano', ['Chinese','English'],['T']],
